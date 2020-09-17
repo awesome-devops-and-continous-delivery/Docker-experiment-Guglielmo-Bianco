@@ -1,10 +1,13 @@
 FROM node:alpine
-LABEL maintainer="Guglielmo Bianco"
+LABEL maintainer="Ivo von Putzer Reibegg <ivo.putzer@gmail.com>"
+
 WORKDIR /usr/src
+
 COPY ./ ./
+
 RUN npm install --no-optional --no-progress
-EXPOSE 80
+
+EXPOSE 8080
 
 ENTRYPOINT [ "npm" ]
 CMD [ "start" ]
-
